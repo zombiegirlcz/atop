@@ -24,8 +24,9 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      # Android SDK je na ubuntu runneru už předinstalovaný (ANDROID_HOME).
+      # actions/setup-android se nepoužívá — jeho "sdkmanager tools" na nových
+      # cmdline-tools padá (balíček 'tools' už neexistuje).
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4

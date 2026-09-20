@@ -29,20 +29,7 @@
   "tdd": {
     "phase": "idle",
     "testFiles": [],
-    "sourceFiles": [
-      "/root/atop/app/src/main/java/com/atop/taskmanager/MainActivity.kt",
-      "/root/atop/app/src/main/java/com/atop/taskmanager/data/ProcRawSnapshot.kt",
-      "/root/atop/app/src/main/java/com/atop/taskmanager/data/RootProcessDataSource.kt",
-      "/root/atop/app/src/main/java/com/atop/taskmanager/domain/ProcessInfo.kt",
-      "/root/atop/app/src/main/java/com/atop/taskmanager/domain/ProcessParser.kt",
-      "/root/atop/app/src/main/java/com/atop/taskmanager/domain/AppLabelResolver.kt",
-      "/root/atop/app/src/main/java/com/atop/taskmanager/ui/theme/Theme.kt",
-      "/root/atop/app/src/main/java/com/atop/taskmanager/ui/ProcessListViewModel.kt",
-      "/root/atop/app/src/main/java/com/atop/taskmanager/ui/components/LoadBar.kt",
-      "/root/atop/app/src/main/java/com/atop/taskmanager/ui/components/ProcessRow.kt",
-      "/root/atop/app/src/main/java/com/atop/taskmanager/ui/components/KillDialog.kt",
-      "/root/atop/app/src/main/java/com/atop/taskmanager/ui/ProcessListScreen.kt"
-    ],
+    "sourceFiles": [],
     "redVerificationPending": false
   },
   "debug": {
