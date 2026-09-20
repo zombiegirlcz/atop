@@ -29,7 +29,9 @@
   "tdd": {
     "phase": "idle",
     "testFiles": [],
-    "sourceFiles": [],
+    "sourceFiles": [
+      "/root/atop/app/src/main/java/com/atop/taskmanager/ui/components/LoadBar.kt"
+    ],
     "redVerificationPending": false
   },
   "debug": {
