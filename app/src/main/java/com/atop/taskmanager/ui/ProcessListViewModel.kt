@@ -1,7 +1,6 @@
 package com.atop.taskmanager.ui
 
 import android.app.Application
-import android.os.Build
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.atop.taskmanager.data.RootProcessDataSource
@@ -45,14 +44,19 @@ data class UiState(
  *
  * Když chceš přidat "zobrazit jen uživatelské appky", měníš tady
  * a v domain vrstvě. UI ani Root collector se nemění.
+ *
+ * POZOR na pořadí vlastností: `coreCount` musí být deklarován PŘED `parser`,
+ * protože Kotlin inicializuje vlastnosti v pořadí zápisu.
  */
 class ProcessListViewModel(app: Application) : AndroidViewModel(app) {
 
+    /** Kolik jader má telefon (ukazujeme v hlavičce a škálujeme CPU %). */
+    val coreCount: Int =
+        Runtime.getRuntime().availableProcessors().coerceAtLeast(1)
+
     private val source = RootProcessDataSource()
     private val labels = AppLabelResolver(app)
-    private val parser = ProcessParser(
-        coreCount = Runtime.getRuntime().availableProcessors().coerceAtLeast(1)
-    )
+    private val parser = ProcessParser(coreCount = coreCount)
 
     private val _state = MutableStateFlow(UiState())
     val state: StateFlow<UiState> = _state.asStateFlow()
@@ -113,7 +117,8 @@ class ProcessListViewModel(app: Application) : AndroidViewModel(app) {
 
     fun setFilter(filter: ProcessFilter) = update { it.copy(filter = filter) }
 
-    fun setRefreshInterval(ms: Long) = update { it.copy(refreshIntervalMs = ms.coerceIn(500L, 10_000L)) }
+    fun setRefreshInterval(ms: Long) =
+        update { it.copy(refreshIntervalMs = ms.coerceIn(500L, 10_000L)) }
 
     fun kill(pid: Int, force: Boolean) {
         viewModelScope.launch { source.kill(pid, if (force) 9 else 15) }
@@ -159,10 +164,4 @@ class ProcessListViewModel(app: Application) : AndroidViewModel(app) {
         super.onCleared()
         stop()
     }
-
-    /** Pomocná: kolik jader má telefon (ukazujeme v hlavičce). */
-    val coreCount: Int
-        get() = Build.VERSION.SDK_INT.let {
-            Runtime.getRuntime().availableProcessors().coerceAtLeast(1)
-        }
 }
