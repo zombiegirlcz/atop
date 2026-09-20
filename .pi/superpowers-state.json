@@ -1,0 +1,57 @@
+{
+  "workflow": {
+    "phases": {
+      "brainstorm": "pending",
+      "plan": "pending",
+      "execute": "pending",
+      "verify": "pending",
+      "review": "pending",
+      "finish": "pending"
+    },
+    "currentPhase": null,
+    "artifacts": {
+      "brainstorm": null,
+      "plan": null,
+      "execute": null,
+      "verify": null,
+      "review": null,
+      "finish": null
+    },
+    "prompted": {
+      "brainstorm": false,
+      "plan": false,
+      "execute": false,
+      "verify": false,
+      "review": false,
+      "finish": false
+    }
+  },
+  "tdd": {
+    "phase": "idle",
+    "testFiles": [],
+    "sourceFiles": [
+      "/root/atop/app/src/main/java/com/atop/taskmanager/MainActivity.kt",
+      "/root/atop/app/src/main/java/com/atop/taskmanager/data/ProcRawSnapshot.kt",
+      "/root/atop/app/src/main/java/com/atop/taskmanager/data/RootProcessDataSource.kt",
+      "/root/atop/app/src/main/java/com/atop/taskmanager/domain/ProcessInfo.kt",
+      "/root/atop/app/src/main/java/com/atop/taskmanager/domain/ProcessParser.kt",
+      "/root/atop/app/src/main/java/com/atop/taskmanager/domain/AppLabelResolver.kt",
+      "/root/atop/app/src/main/java/com/atop/taskmanager/ui/theme/Theme.kt",
+      "/root/atop/app/src/main/java/com/atop/taskmanager/ui/ProcessListViewModel.kt",
+      "/root/atop/app/src/main/java/com/atop/taskmanager/ui/components/LoadBar.kt",
+      "/root/atop/app/src/main/java/com/atop/taskmanager/ui/components/ProcessRow.kt",
+      "/root/atop/app/src/main/java/com/atop/taskmanager/ui/components/KillDialog.kt",
+      "/root/atop/app/src/main/java/com/atop/taskmanager/ui/ProcessListScreen.kt"
+    ],
+    "redVerificationPending": false
+  },
+  "debug": {
+    "active": false,
+    "investigated": true,
+    "fixAttempts": 0
+  },
+  "verification": {
+    "verified": false,
+    "verificationWaived": false
+  }
+}
